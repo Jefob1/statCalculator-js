@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="table_center">
+        <div class="drop-down">
+          <div class="drop-down__button" id="dropDown">
+            <a class="drop-down__name">Menu</a>
+          </div>
+          <div class="drop-down__menu-box">
+            <ul class="drop-down__menu">
+              <li data-name="profile" class="drop-down__item">
+                <a href="index.html">Standard</a
+                ><svg
+                  version="1.1"
+                  class="drop-down__item-icon"
+                  xmlns="https://www.w3.org/2000/svg"
+                  xlmns:xlink="https://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 350 350"
+                  style="enable-background: new 0 0 350 350"
+                  xml:space="preserve"
+                ></svg>
+              </li>
+              <li data-name="dashboard" class="drop-down__item">
+                <a href="statCalc.html">Statistics</a
+                ><svg
+                  version="1.1"
+                  class="drop-down__item-icon"
+                  xmlns="https://www.w3.org/2000/svg"
+                  xlmns:xlink="https://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="511.626px"
+                  height="511.627px"
+                  viewBox="0 0 511.626 511.627"
+                  style="enable-background: new 0 0 511.626 511.627"
+                  xml:space="preserve"
+                ></svg>
+              </li>
+              <li data-name="activity" class="drop-down__item">
+                <a href="graphCalc.html">Graph</a
+                ><svg
+                  version="1.1"
+                  class="drop-down__item-icon"
+                  xmlns="https://www.w3.org/2000/svg"
+                  xlmns:xlink="https://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="95.103px"
+                  height="95.103px"
+                  viewBox="0 0 95.103 95.103"
+                  style="enable-background: new 0 0 95.103 95.103"
+                  xml:space="preserve"
+                ></svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h1>Calculator</h1>
+      <label for="dataInput"></label>
+      <input type="text" id="dataInput" />
+      <br />
+      <div id="powerInputContainer" style="display: none">
+        <label for="Value">Enter value for x:</label>
+        <input type="text" id="xValue" />
+        <label for="Value">Enter value for y:</label>
+        <input type="text" id="yValue" />
+        <button
+          class="calc-btn"
+          id="calculatePowerButton"
+          onclick="calculatePower()"
+        >
+          xʸ
+        </button>
+      </div>
+      <br /><br />
+      <div class="calculator">
+        <button class="calc-btn operator" onclick="calculateXSquare()">
+          x<sup>2</sup>
+        </button>
+        <button class="calc-btn operator" onclick="calculateReciprocal()">
+          x<sup>-1</sup>
+        </button>
+        <button class="calc-btn operator" onclick="calculateSquareRoot()">
+          √x
+        </button>
+        <button class="calc-btn operator" onclick="togglePowerInputFields()">
+          xʸ
+        </button>
+
+        <button class="calc-btn" onclick="appendNumber('7')">7</button>
+        <button class="calc-btn" onclick="appendNumber('8')">8</button>
+        <button class="calc-btn" onclick="appendNumber('9')">9</button>
+        <button class="calc-btn operator" onclick="appendOperator('+')">
+          +
+        </button>
+        <button class="calc-btn" onclick="appendNumber('4')">4</button>
+        <button class="calc-btn" onclick="appendNumber('5')">5</button>
+        <button class="calc-btn" onclick="appendNumber('6')">6</button>
+        <button class="calc-btn operator" onclick="appendOperator('-')">
+          -
+        </button>
+        <button class="calc-btn" onclick="appendNumber('1')">1</button>
+        <button class="calc-btn" onclick="appendNumber('2')">2</button>
+        <button class="calc-btn" onclick="appendNumber('3')">3</button>
+        <button class="calc-btn operator" onclick="appendOperator('*')">
+          *
+        </button>
+        <button class="calc-btn" onclick="appendNumber('.')">.</button>
+        <button class="calc-btn" onclick="appendNumber('0')">0</button>
+        <button class="calc-btn" onclick="changeSign()">+/-</button
+        ><button class="calc-btn operator" onclick="appendOperator('/')">
+          /
+        </button>
+        <button class="calc-btn clear" onclick="clearCalculator()">C</button>
+        <button
+          class="calc-btn equal"
+          id="calculateButton"
+          onclick="calculateResult()"
+        >
+          =
+        </button>
+        <button class="calc-btn backspace" onclick="backspace()">←</button>
+      </div>
+    </div>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </body>
+</html>
